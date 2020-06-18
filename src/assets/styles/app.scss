@@ -1,5 +1,12 @@
+@import "./vars.scss";
+
+
 body {
-	margin: 0;
-	background-color: #ff0000;
-	color: #fff;
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    background: linear-gradient($darkBlue, $whiteGreen);
+}
+
+* {
+	box-sizing: border-box;
 }

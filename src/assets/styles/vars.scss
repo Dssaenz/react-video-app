@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Muli&display=swap);
+
+$theme-font: 'Muli', sans-serif;
+
+$white: #FFF;
+$whiteGreen: #06A77D;
+$darkBlue: #005377;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexAround {
+    display: flex;
+    justify-content: space-around;
+}
