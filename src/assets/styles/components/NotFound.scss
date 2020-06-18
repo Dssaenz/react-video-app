@@ -1,0 +1,42 @@
+@import "../vars.scss";
+
+.error__container {
+	color: white;
+	min-height: 500px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.error__container h2 {
+	color: white;
+	font-size: 80px;
+	padding: 0;
+	margin: 0;
+}
+
+.error__container p {
+	color: white;
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+}
+
+.pulse {
+	animation-name: pulse;
+	animation-duration: 1s;
+}
+
+.animated {
+	animation-duration: 2.1s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+	0% {transform: scale(1);}
+	50% {transform: scale(1.1);}
+	100% {transform: scale(1);}
+}

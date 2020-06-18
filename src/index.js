@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './components/helloWorld';
+import { Provider } from 'react-redux';
+import App from './routes/App';
+import store from '../store';
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+  , document.getElementById('app'),
+);
 
