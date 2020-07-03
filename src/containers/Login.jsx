@@ -8,7 +8,6 @@ import facebook from '../assets/static/facebook.svg';
 import instagram from '../assets/static/instagram.svg';
 
 function Login(props) {
-  const { loginRequest } = props;
   const [form, handleForm] = useState({
     email: '',
   });
@@ -22,7 +21,7 @@ function Login(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    loginRequest(form);
+    props.loginRequest(form);
     props.history.push('/');
   }
 
@@ -68,6 +67,7 @@ function Login(props) {
         </section>
         <p className='login__container--register'>
           No tienes ninguna cuenta
+          {' '}
           <Link to='/register'>Regístrate</Link>
         </p>
       </section>

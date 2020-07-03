@@ -9,9 +9,7 @@
 }
 
 .register__container {
-	width: 300px;
 	color: $white;
-	min-height: 620px;
 	border-radius: 40px;
 	@include flexAround;
 	flex-direction: column;

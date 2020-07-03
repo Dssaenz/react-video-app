@@ -10,11 +10,25 @@ import {
 
 import '../assets/styles/app.scss';
 
-function Home({ mylist, trends, originals }) {
-  console.log(mylist, 'hola');
+function Home({ mylist, trends, originals, searchResult }) {
   return (
     <>
       <Search />
+      {
+        Object.keys(searchResult).length > 0 &&
+        (
+          <Categories title='Resultados de la busqueda...'>
+            <Carousel>
+              {searchResult.map((item) => (
+                <ItemCarousel
+                  key={item.id}
+                  {...item}
+                />
+              ))}
+            </Carousel>
+          </Categories>
+        )
+      }
       {mylist.length > 0 && (
         <Categories title='Mi lista'>
           <Carousel>
@@ -57,6 +71,7 @@ const mapStateToProps = (state) => {
     mylist: state.mylist,
     trends: state.trends,
     originals: state.originals,
+    searchResult: state.searchResult,
   };
 };
 
