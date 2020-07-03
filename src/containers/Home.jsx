@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { connect } from 'react-redux';
 import {
@@ -7,23 +8,21 @@ import {
   ItemCarousel,
 } from '../components';
 
-import '../assets/styles/App.scss';
+import '../assets/styles/app.scss';
 
 function Home({ mylist, trends, originals }) {
+  console.log(mylist, 'hola');
   return (
     <>
       <Search />
       {mylist.length > 0 && (
         <Categories title='Mi lista'>
           <Carousel>
-            {mylist?.map((item) => (
+            {mylist.map((item) => (
               <ItemCarousel
                 key={item.id}
-                title={item.title}
-                year={item.year}
-                contentRating={item.contentRating}
-                duration={item.duration}
-                cover={item.cover}
+                {...item}
+                isList
               />
             ))}
           </Carousel>
@@ -34,11 +33,7 @@ function Home({ mylist, trends, originals }) {
           {trends.map((item) => (
             <ItemCarousel
               key={item.id}
-              title={item.title}
-              year={item.year}
-              contentRating={item.contentRating}
-              duration={item.duration}
-              cover={item.cover}
+              {...item}
             />
           ))}
         </Carousel>
@@ -48,11 +43,7 @@ function Home({ mylist, trends, originals }) {
           {originals.map((item) => (
             <ItemCarousel
               key={item.id}
-              title={item.title}
-              year={item.year}
-              contentRating={item.contentRating}
-              duration={item.duration}
-              cover={item.cover}
+              {...item}
             />
           ))}
         </Carousel>
